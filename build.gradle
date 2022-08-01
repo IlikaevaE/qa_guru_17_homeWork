@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id "io.freefair.lombok" version "6.0.0-m2"
 }
 
 repositories {
@@ -8,12 +9,16 @@ repositories {
 
 def restAssuredVersion = "5.1.1",
     junitVersion = "5.8.2",
-    slf4jVersion = "1.7.32"
+    slf4jVersion = "1.7.32",
+    assertjVersion = "3.23.1"
+
 
 dependencies {
     testImplementation(
             "io.rest-assured:rest-assured:$restAssuredVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
+            "org.assertj:assertj-core:$assertjVersion",
+            "com.fasterxml.jackson.core:jackson-databind:2.11.2",
             "org.slf4j:slf4j-simple:$slf4jVersion"
     )
     testRuntimeOnly(
